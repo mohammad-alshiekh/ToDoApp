@@ -18,3 +18,4 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => TaskController(Get.find<TaskRepository>()));
   }
 }
+//my do
