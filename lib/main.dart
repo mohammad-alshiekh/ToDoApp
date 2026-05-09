@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'data/providers/hive_service.dart';
 import 'services/theme_service.dart';
+import 'services/notification_service.dart';
 import 'routes/app_pages.dart';
 import 'routes/app_routes.dart';
 import 'ui/themes/app_theme.dart';
@@ -14,6 +15,10 @@ void main() async {
   final hiveService = HiveService();
   await hiveService.init();
   Get.put(hiveService);
+
+  // Initialize Notification Service
+ // final notificationService = await NotificationService().init();
+ // Get.put(notificationService);
 
   // Initialize Theme Service
   final themeService = await ThemeService().init();

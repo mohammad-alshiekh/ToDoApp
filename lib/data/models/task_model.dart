@@ -22,6 +22,15 @@ class Task extends HiveObject {
   @HiveField(5)
   int priority; // 0: Low, 1: Medium, 2: High
 
+  @HiveField(6)
+  String category;
+
+  @HiveField(7)
+  DateTime? dueDate;
+
+  @HiveField(8)
+  bool reminderEnabled;
+
   Task({
     required this.id,
     required this.title,
@@ -29,6 +38,9 @@ class Task extends HiveObject {
     required this.createdAt,
     this.isCompleted = false,
     this.priority = 1,
+    this.category = 'General',
+    this.dueDate,
+    this.reminderEnabled = false,
   });
 
   Task copyWith({
@@ -38,6 +50,9 @@ class Task extends HiveObject {
     DateTime? createdAt,
     bool? isCompleted,
     int? priority,
+    String? category,
+    DateTime? dueDate,
+    bool? reminderEnabled,
   }) {
     return Task(
       id: id ?? this.id,
@@ -46,6 +61,9 @@ class Task extends HiveObject {
       createdAt: createdAt ?? this.createdAt,
       isCompleted: isCompleted ?? this.isCompleted,
       priority: priority ?? this.priority,
+      category: category ?? this.category,
+      dueDate: dueDate ?? this.dueDate,
+      reminderEnabled: reminderEnabled ?? this.reminderEnabled,
     );
   }
 }
